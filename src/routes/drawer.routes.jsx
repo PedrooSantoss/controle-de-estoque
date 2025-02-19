@@ -1,67 +1,50 @@
+import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { Feather } from "@expo/vector-icons";
-
-import Home from "../screens/Home";
-import Profile from "../screens/Profile";
-import Category from "../screens/Category";
-import { user } from "../data/Profile";
+import ProductList from "../components/ProductList";
+import HomeScreen from "../screens/HomeScreen";
+import AboutScreen from "../screens/AboutScreen";
+import Cart from "../components/Cart"; // Ajustado o caminho do componente Cart
 
 const Drawer = createDrawerNavigator();
 
 const DrawerRoutes = () => {
   return (
-    <Drawer.Navigator screenOptions={{ headerShown: true }}>
+    <Drawer.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: true, // Mostra o cabeçalho no topo
+        drawerStyle: { backgroundColor: "#f4f4f4" }, // Estilo da gaveta
+        drawerActiveTintColor: "#007bff", // Cor do texto ativo
+        drawerInactiveTintColor: "#333", // Cor do texto inativo
+        drawerLabelStyle: { fontSize: 16 }, // Estilo do texto das opções
+      }}
+    >
+      {/* Tela Inicial */}
       <Drawer.Screen
         name="Home"
-        component={Home}
-        options={{
-          headerTitle: "",
-          drawerIcon: ({ focused }) => (
-            <Feather
-              name="home"
-              size={24}
-              color={focused ? "#131313" : "#D6D6D6"}
-            />
-          ),
-          drawerLabel: "Inicial",
-          drawerActiveTintColor: "#131313",
-          drawerInactiveTintColor: "#D6D6D6",
-        }}
+        component={HomeScreen}
+        options={{ title: "Início" }}
       />
+
+      {/* Tela de Produtos */}
       <Drawer.Screen
-        name="Profile"
-        component={Profile}
-        initialParams={{ data: user }}
-        options={{
-          headerTitle: "",
-          drawerIcon: ({ focused }) => (
-            <Feather
-              name="user"
-              size={24}
-              color={focused ? "#131313" : "#D6D6D6"}
-            />
-          ),
-          drawerLabel: "Perfil",
-          drawerActiveTintColor: "#131313",
-          drawerInactiveTintColor: "#D6D6D6",
-        }}
+        name="Products"
+        component={ProductList}
+        options={{ title: "Lista de Produtos" }}
       />
+
+      {/* Tela Sobre */}
       <Drawer.Screen
-        name="Category"
-        component={Category}
-        options={{
-          headerTitle: "",
-          drawerIcon: ({ focused }) => (
-            <Feather
-              name="list"
-              size={24}
-              color={focused ? "#131313" : "#D6D6D6"}
-            />
-          ),
-          drawerLabel: "Categorias",
-          drawerActiveTintColor: "#131313",
-          drawerInactiveTintColor: "#D6D6D6",
-        }}
+        name="About"
+        component={AboutScreen}
+        options={{ title: "Sobre Nós" }}
+      />
+
+      {/* Tela de Carrinho */}
+      <Drawer.Screen
+        name="Cart"
+        component={Cart}
+        options={{ title: "Carrinho" }}
       />
     </Drawer.Navigator>
   );

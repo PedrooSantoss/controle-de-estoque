@@ -1,0 +1,311 @@
+/* Container principal */
+.p-4 {
+  padding: 16px;
+  background-color: #f8f9fa; /* Fundo neutro */
+  height: 1000px; /* Altura fixa do container */
+  overflow-y: auto; /* Scroll vertical funcional */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espaçamento entre os elementos */
+  box-sizing: border-box; /* Garante que o padding não ultrapasse os limites */
+}
+
+/* Grid para os cards */
+.grid {
+  display: grid;
+  gap: 16px; /* Espaçamento entre os cards */
+  grid-template-columns: repeat(5, 1fr); /* 5 cards por fileira */
+  align-items: start; /* Alinha os cards ao topo */
+}
+
+/* Card */
+.card {
+  padding: 12px;
+  background-color: #ffffff; /* Fundo branco */
+  border: 1px solid #e0e0e0; /* Borda leve */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animações */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px; /* Altura fixa */
+}
+
+.card:hover {
+  transform: translateY(-8px); /* Move o card levemente para cima */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra maior no hover */
+}
+
+/* Imagem do card */
+.card img {
+  width: 100%;
+  height: 140px; /* Altura fixa para imagens */
+  object-fit: contain; /* Ajusta imagem sem cortar */
+  border-radius: 8px;
+  background-color: #f1f1f1; /* Fundo neutro */
+  margin-bottom: 12px;
+}
+
+/* Título do card */
+.card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 8px;
+  max-height: 40px; /* Limita o título a 2 linhas */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona reticências em texto longo */
+  white-space: nowrap; /* Mantém o texto em linha única */
+}
+
+/* Texto adicional */
+.card p {
+  font-size: 0.8rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Preço */
+.text-green-600 {
+  color: #27ae60; /* Verde elegante */
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Botão */
+.button {
+  padding: 10px 16px;
+  background-color: #007bff; /* Azul moderno */
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+/* Barra de rolagem customizada (opcional) */
+.p-4::-webkit-scrollbar {
+  width: 8px;
+}
+
+.p-4::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.p-4::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Container principal */
+.p-4 {
+  padding: 16px;
+  background-color: #f8f9fa;
+  height: 200vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Notificações flutuantes */
+.notification {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 2px 4px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  z-index: 12;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fade-in-out 3s ease-in-out;
+}
+
+.notification.success {
+  background-color: #27ae60; /* Verde para sucesso */
+}
+
+.notification.error {
+  background-color: #e74c3c; /* Vermelho para erro */
+}
+
+/* Animação para aparecer/desaparecer */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Grid para os produtos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  overflow-y: auto;
+}
+
+/* Estilo dos cards */
+.card {
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1rem; /* Tamanho do texto */
+  font-weight: bold; /* Texto em negrito */
+  color: #333; /* Cor escura para contraste */
+  text-align: center; /* Centraliza o texto */
+  margin: 8px 0; /* Espaçamento vertical */
+  overflow: hidden; /* Evita estouro de texto */
+  text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
+  white-space: nowrap; /* Mantém o texto em uma única linha */
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo do carrinho */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.remove-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #c0392b;
+}
+
+.notification {
+  position: fixed;
+  top: 850px; /* Margem superior reduzida */
+  right: 10px; /* Margem lateral reduzida */
+  padding: 4px 8px; /* Tamanho compacto */
+  border-radius: 6px; /* Cantos mais suaves */
+  color: white;
+  font-size: 0.875rem; /* Texto menor */
+  font-weight: bold; /* Negrito para maior destaque */
+  z-index: 1000; /* Garantir que fique acima de outros elementos */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Sombra leve */
+  animation: fade-in-out 3s ease-in-out; /* Animação suave */
+  display: flex; /* Alinha o ícone com o texto */
+  align-items: center;
+  gap: 8px; /* Espaço entre o ícone e o texto */
+  max-width: 250px; /* Limita o tamanho máximo */
+  word-wrap: break-word; /* Permite quebra de texto */
+}
+
+.notification.success {
+  background-color: #27ae60; /* Verde para sucesso */
+}
+
+.notification.error {
+  background-color: #e74c3c; /* Vermelho para erro */
+}
+
+/* Animação para aparecer/desaparecer */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+
+.search-bar {
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 400px; /* Largura máxima para centralizar melhor */
+  padding: 10px 16px; /* Espaçamento interno confortável */
+  margin: 10px auto; /* Margem para centralizar e espaçar */
+  border: 1px solid #ccc; /* Borda leve */
+  border-radius: 8px; /* Cantos arredondados */
+  font-size: 1rem; /* Tamanho do texto */
+  color: #333; /* Cor do texto */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  outline: none; /* Remove o contorno padrão */
+  transition: all 0.3s ease; /* Animações suaves */
+}
+
+.search-bar:focus {
+  border-color: #007bff; /* Cor da borda ao focar */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Destaque maior ao focar */
+}
+
+.search-bar::placeholder {
+  color: #aaa; /* Cor do texto do placeholder */
+  font-style: italic; /* Placeholder em itálico */
+}
+
+
+.buy-button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none; /* Remove o sublinhado no link */
+  display: inline-block; /* Comportamento de botão */
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
