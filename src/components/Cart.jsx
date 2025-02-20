@@ -24,7 +24,7 @@ const Cart = () => {
               <button
   className="buy-button"
   onClick={() => {
-    window.location.href = "https://pay.kirvano.com/0a36f559-ab75-47ee-8dc7-cce20910328e?aff=4cabdf1a-e086-41cb-86dd-51fa39889fef"; // Substitua pelo link desejado
+    window.location.href = "https://go.perfectpay.com.br/PPU38CPHICD"; // Substitua pelo link desejado
   }}
 >
   Comprar
